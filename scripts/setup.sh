@@ -1,4 +1,4 @@
-f [!(-d bin/)]; then
+if [!(-d bin/)]; then
 mkdir bin
 fi
 if [!(-d lib/)]; then
