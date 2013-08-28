@@ -130,4 +130,4 @@ $(BIN)%$(BinSuf): $(PRG)%$(PrgSuf) $(HDRS) $(LIB)$(SONAME)
 
 
 clean:
-	rm -f $(OBJ)*$(ObjSuf) $(LIB)*$(LibSuf) $(OBJ)mydict*
+	rm -f $(BIN)*$(BinSuf) $(OBJ)*$(ObjSuf) $(LIB)*$(LibSuf) $(OBJ)mydict*

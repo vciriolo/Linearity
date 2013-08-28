@@ -17,6 +17,9 @@ $JOBCfgTemplate      = $User_Preferences{"JOBCfgTemplate"};
 $INPUTFilesDA        = $User_Preferences{"INPUTFilesDA"};
 $INPUTFilesMC        = $User_Preferences{"INPUTFilesMC"};
 $USEGlobeNtuple      = $User_Preferences{"USEGlobeNtuple"};
+$USEShervinNtuple    = $User_Preferences{"USEShervinNtuple"};
+$MCGen               = $User_Preferences{"MCGen"};
+$RUNDepFlag          = $User_Preferences{"RUNDepFlag"};
 $ENCorrType          = $User_Preferences{"ENCorrType"};
 $YEAR                = $User_Preferences{"YEAR"};
 $DATALabel           = $User_Preferences{"DATALabel"};
@@ -39,8 +42,14 @@ if( $USEGlobeNtuple eq "false" )
   $globeLabel = "nonGlobe";
 }
 
+$runDepLabel = "allRange";
+if( $RUNDepFlag eq "true" )
+{
+  $runDepLabel = "runDependent";
+}
 
-$jobDir = $baseDir."/data/".$YEAR."/".$DATALabel."/".$CATType."_".$globeLabel."_".$ENCorrType."_".$DphiLabel."/jobs/";
+
+$jobDir = $baseDir."/data/".$YEAR."/".$DATALabel."/".$CATType."_".$globeLabel."_".$MCGen."-".$runDepLabel."_".$ENCorrType."_".$DphiLabel."/jobs/";
 print("jobDir: ".$jobDir."\n");
 
 $command = "mkdir -p ".$jobDir;
@@ -62,6 +71,9 @@ for($cat = 0; $cat < $NCats; ++$cat)
   system ("cat ".$JOBCfgTemplate."   | sed -e s%INPUTFILESDA%".$INPUTFilesDA.
                                  "%g | sed -e s%INPUTFILESMC%".$INPUTFilesMC.
                                  "%g | sed -e s%USEGLOBENTUPLE%".$USEGlobeNtuple.
+                                 "%g | sed -e s%MCGEN%".$MCGen.
+                                 "%g | sed -e s%RUNDEPFLAG%".$RUNDepFlag.
+                                 "%g | sed -e s%USESHERVINNTUPLE%".$USEShervinNtuple.
                                  "%g | sed -e s%ENCORRTYPE%".$ENCorrType.
                                  "%g | sed -e s%YEAR%".$YEAR.
                                  "%g | sed -e s%DATALABEL%".$DATALabel.
@@ -86,7 +98,8 @@ for($cat = 0; $cat < $NCats; ++$cat)
   print JOBSH "eval `scramv1 runtime -sh`\n";
   print JOBSH "cd -\n";
   print JOBSH "pwd \n";
-  print JOBSH "source scripts/setup_hercules.sh \n";
+  print JOBSH "source scripts/setup.sh \n";
+  print JOBSH "root-config --version \n";
   print JOBSH "unbuffer studyLinearity_MZ.exe ".$jobCfg." >& ".$jobOut."\n";
   
   
