@@ -100,7 +100,8 @@ for($cat = 0; $cat < $NCats; ++$cat)
   print JOBSH "pwd \n";
   print JOBSH "source scripts/setup.sh \n";
   print JOBSH "root-config --version \n";
-  print JOBSH "unbuffer bin/studyLinearity_MZ.exe ".$jobCfg." >& ".$jobOut."\n";
+  print JOBSH "echo \$PATH\n";
+  print JOBSH "unbuffer studyLinearity_MZ.exe ".$jobCfg." >& ".$jobOut."\n";
   
   
   print LANCIA "qsub -d ".$jobDir." -q shortcms ".$jobSh."\n";
