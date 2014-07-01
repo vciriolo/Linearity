@@ -1,0 +1,216 @@
+>>> Parsing /afs/cern.ch/work/a/amartell/Linearity/Linearity//data/2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/jobs//params_cat3.cfg file
+Error in <TFile::TFile>: file TF1_pol1_MZ/TF1_pol1_stdCat_std_cat0.root does not exist
+Error in <TFile::TFile>: file TF1_pol1_MZ/TF1_pol1_stdCat_std_cat1.root does not exist
+Error in <TFile::TFile>: file TF1_pol1_MZ/TF1_pol1_stdCat_std_cat2.root does not exist
+Error in <TFile::TFile>: file TF1_pol1_MZ/TF1_pol1_stdCat_std_cat3.root does not exist
+
+>>> Get trees
+131211 14:55:46 001 Xrd: GoToAnotherServer: Going to: lxfsre13a06.cern.ch:1095
+>>>   MC:  7025340 entries
+131211 14:55:48 001 Xrd: GoToAnotherServer: Going to: lxfsra18a03.cern.ch:1095
+131211 14:55:48 001 Xrd: GoToAnotherServer: Going to: lxfsrf59c01.cern.ch:1095
+>>> DATA:  2106700 entries
+
+>>> Define branch addresses
+
+>>> Setup data scale corrections
+>>>>>> ScaleCorrector::SetShervinRunDepScaleMap begin
+>>>>>> ScaleCorrector::SetShervinRunDepScaleMap end
+>>>>>> ScaleCorrector::SetShervinEtDepScaleMap begin
+>>>>>> ScaleCorrector::SetShervinEtDepScaleMap end
+>>>>>> ScaleCorrector::SetShervinEtResidualDepScaleMap begin
+>>>>>> ScaleCorrector::SetShervinEtResidualDepScaleMap end
+
+>>> Setup MC extrasmearing
+>>>>>> Smearer::SetShervinExtraSmearingMap begin
+>>>>>> Smearer::SetShervinExtraSmearingMap end
+>>>>>> Smearer::SetShervinEtExtraSmearingMap begin
+>>>>>> Smearer::SetShervinEtExtraSmearingMap end
+
+>>> Setup MC pileup reweighting
+>>>>>> PUReweighting::ReadPUWeights:   PUWeights[allRange] filled from PUWeights_DYToEE_M20_powheg-Summer11-START53_Run2011AB_allRange.root
+
+>>> Setup eta/R9 reweighting
+>>> Ht bin 0:   [60,80]
+>>> Ht bin 1:   [80,90]
+>>> Ht bin 2:   [90,100]
+>>> Ht bin 3:   [100,120]
+>>> Ht bin 4:   [120,150]
+>>> Ht bin 5:   [150,1000]
+
+>>> define bins
+>>> Et bin 0:   [30,40]
+>>> Et bin 1:   [40,45]
+>>> Et bin 2:   [45,50]
+>>> Et bin 3:   [50,60]
+>>> Et bin 4:   [60,75]
+>>> Et bin 5:   [75,500]
+
+
+>>> define histograms
+
+>>> Read data from MC sample
+>>>>>> reading   MC entry 0 / 7025340>>>>>> reading   MC entry 100000 / 7025340>>>>>> reading   MC entry 200000 / 7025340>>>>>> reading   MC entry 300000 / 7025340>>>>>> reading   MC entry 400000 / 7025340>>>>>> reading   MC entry 500000 / 7025340>>>>>> reading   MC entry 600000 / 7025340>>>>>> reading   MC entry 700000 / 7025340>>>>>> reading   MC entry 800000 / 7025340>>>>>> reading   MC entry 900000 / 7025340>>>>>> reading   MC entry 1000000 / 7025340>>>>>> reading   MC entry 1100000 / 7025340>>>>>> reading   MC entry 1200000 / 7025340>>>>>> reading   MC entry 1300000 / 7025340>>>>>> reading   MC entry 1400000 / 7025340>>>>>> reading   MC entry 1500000 / 7025340>>>>>> reading   MC entry 1600000 / 7025340>>>>>> reading   MC entry 1700000 / 7025340>>>>>> reading   MC entry 1800000 / 7025340>>>>>> reading   MC entry 1900000 / 7025340>>>>>> reading   MC entry 2000000 / 7025340>>>>>> reading   MC entry 2100000 / 7025340>>>>>> reading   MC entry 2200000 / 7025340>>>>>> reading   MC entry 2300000 / 7025340>>>>>> reading   MC entry 2400000 / 7025340>>>>>> reading   MC entry 2500000 / 7025340>>>>>> reading   MC entry 2600000 / 7025340>>>>>> reading   MC entry 2700000 / 7025340>>>>>> reading   MC entry 2800000 / 7025340>>>>>> reading   MC entry 2900000 / 7025340>>>>>> reading   MC entry 3000000 / 7025340>>>>>> reading   MC entry 3100000 / 7025340>>>>>> reading   MC entry 3200000 / 7025340>>>>>> reading   MC entry 3300000 / 7025340>>>>>> reading   MC entry 3400000 / 7025340>>>>>> reading   MC entry 3500000 / 7025340>>>>>> reading   MC entry 3600000 / 7025340>>>>>> reading   MC entry 3700000 / 7025340>>>>>> reading   MC entry 3800000 / 7025340>>>>>> reading   MC entry 3900000 / 7025340>>>>>> reading   MC entry 4000000 / 7025340>>>>>> reading   MC entry 4100000 / 7025340>>>>>> reading   MC entry 4200000 / 7025340>>>>>> reading   MC entry 4300000 / 7025340>>>>>> reading   MC entry 4400000 / 7025340>>>>>> reading   MC entry 4500000 / 7025340>>>>>> reading   MC entry 4600000 / 7025340>>>>>> reading   MC entry 4700000 / 7025340>>>>>> reading   MC entry 4800000 / 7025340>>>>>> reading   MC entry 4900000 / 7025340>>>>>> reading   MC entry 5000000 / 7025340>>>>>> reading   MC entry 5100000 / 7025340>>>>>> reading   MC entry 5200000 / 7025340>>>>>> reading   MC entry 5300000 / 7025340>>>>>> reading   MC entry 5400000 / 7025340>>>>>> reading   MC entry 5500000 / 7025340>>>>>> reading   MC entry 5600000 / 7025340>>>>>> reading   MC entry 5700000 / 7025340>>>>>> reading   MC entry 5800000 / 7025340>>>>>> reading   MC entry 5900000 / 7025340>>>>>> reading   MC entry 6000000 / 7025340>>>>>> reading   MC entry 6100000 / 7025340>>>>>> reading   MC entry 6200000 / 7025340>>>>>> reading   MC entry 6300000 / 7025340>>>>>> reading   MC entry 6400000 / 7025340>>>>>> reading   MC entry 6500000 / 7025340>>>>>> reading   MC entry 6600000 / 7025340>>>>>> reading   MC entry 6700000 / 7025340>>>>>> reading   MC entry 6800000 / 7025340>>>>>> reading   MC entry 6900000 / 7025340>>>>>> reading   MC entry 7000000 / 7025340
+>>> Read data from DATA sample
+>>> DATA nEntries = 2106700
+>>>>>> reading DATA entry 0 / 2106700131211 14:56:31 001 Xrd: GoToAnotherServer: Going to: lxfsra20a03.cern.ch:1095
+>>>>>> reading DATA entry 100000 / 2106700>>>>>> reading DATA entry 200000 / 2106700>>>>>> reading DATA entry 300000 / 2106700>>>>>> reading DATA entry 400000 / 2106700>>>>>> reading DATA entry 500000 / 2106700>>>>>> reading DATA entry 600000 / 2106700>>>>>> reading DATA entry 700000 / 2106700>>>>>> reading DATA entry 800000 / 2106700>>>>>> reading DATA entry 900000 / 2106700131211 14:56:41 001 Xrd: GoToAnotherServer: Going to: lxfsre11a01.cern.ch:1095
+>>>>>> reading DATA entry 1000000 / 2106700>>>>>> reading DATA entry 1100000 / 2106700>>>>>> reading DATA entry 1200000 / 2106700>>>>>> reading DATA entry 1300000 / 2106700>>>>>> reading DATA entry 1400000 / 2106700>>>>>> reading DATA entry 1500000 / 2106700>>>>>> reading DATA entry 1600000 / 2106700>>>>>> reading DATA entry 1700000 / 2106700>>>>>> reading DATA entry 1800000 / 2106700>>>>>> reading DATA entry 1900000 / 2106700>>>>>> reading DATA entry 2000000 / 2106700>>>>>> reading DATA entry 2100000 / 2106700
+
+>>> sort DATA events vs. Ht
+>>>>>> nEntries 74229
+>>>>>> Sorting variable Ht
+>>>>>> Effective entries: 74229
+>>>>>> sortedEntries.size(): 74229
+
+>>> fill histograms
+>>> MCEntries = 218808
+reading   MC entry 0 / 218808reading   MC entry 100000 / 218808reading   MC entry 200000 / 218808
+
+****** step 1 ******
+reading DATA entry 0 / 74229
+
+>>> find scale estimator
+>>> HtBin::0
+>>>>>> nEvents:                  5994
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+>>>>>> nEvents_gausFit:          5994
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+>>>>>> nEvents_mean:             5994
+>>>>>> nEvents_recursiveMean:    5994
+ >>> fabs(mean-oldMean) = 2.9391e-05
+ >>> fabs(mean-oldMean) = 5.88423e-05
+ FindRecursiveMean HtBin = 0 x = 74.8237
+ MC scale = 0.849957
+ DA scale = 0.844433
+ DA/MC scale = 0.9935
+ HtBin = 0 x = 74.8237 y = 0.9935
+ HtBin = 0 exlow = 0.0373141 exhig = 0.0373141 eylow = 0.000634594 eyhig = 0.000634594
+>>>>>> nEvents_smallestInterval: 5994
+>>> HtBin::1
+>>>>>> nEvents:                  34373
+>>>>>> nEvents_gausFit:          34373
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+>>>>>> nEvents_mean:             34373
+>>>>>> nEvents_recursiveMean:    34373
+ >>> fabs(mean-oldMean) = 5.85808e-05
+ >>> fabs(mean-oldMean) = 6.38907e-05
+ FindRecursiveMean HtBin = 1 x = 86.4297
+ MC scale = 0.958563
+ DA scale = 0.958659
+ DA/MC scale = 1.0001
+ HtBin = 1 x = 86.4297 y = 1.0001
+ HtBin = 1 exlow = 0.00774857 exhig = 0.00774857 eylow = 0.000167827 eyhig = 0.000167827
+>>>>>> nEvents_smallestInterval: 34373
+>>> HtBin::2
+>>>>>> nEvents:                  26852
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+>>>>>> nEvents_gausFit:          26852
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+>>>>>> nEvents_mean:             26852
+>>>>>> nEvents_recursiveMean:    26852
+ >>> fabs(mean-oldMean) = 4.55939e-05
+ >>> fabs(mean-oldMean) = 7.93663e-05
+ FindRecursiveMean HtBin = 2 x = 93.2382
+ MC scale = 1.00617
+ DA scale = 1.00595
+ DA/MC scale = 0.99978
+ HtBin = 2 x = 93.2382 y = 0.99978
+ HtBin = 2 exlow = 0.00872732 exhig = 0.00872732 eylow = 0.000170168 eyhig = 0.000170168
+>>>>>> nEvents_smallestInterval: 26852
+>>> HtBin::3
+>>>>>> nEvents:                  5515
+>>>>>> nEvents_gausFit:          5515
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+>>>>>> nEvents_mean:             5515
+>>>>>> nEvents_recursiveMean:    5515
+ >>> fabs(mean-oldMean) = 5.87654e-05
+ >>> fabs(mean-oldMean) = 4.55158e-05
+ FindRecursiveMean HtBin = 3 x = 106.548
+ MC scale = 1.00345
+ DA scale = 1.00417
+ DA/MC scale = 1.00072
+ HtBin = 3 x = 106.548 y = 1.00072
+ HtBin = 3 exlow = 0.0461749 exhig = 0.0461749 eylow = 0.000656614 eyhig = 0.000656614
+>>>>>> nEvents_smallestInterval: 5515
+>>> HtBin::4
+>>>>>> nEvents:                  1084
+>>>>>> nEvents_gausFit:          1084
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+>>>>>> nEvents_mean:             1084
+>>>>>> nEvents_recursiveMean:    1084
+ >>> fabs(mean-oldMean) = 8.11625e-05
+ >>> fabs(mean-oldMean) = 0
+ FindRecursiveMean HtBin = 4 x = 129.638
+ MC scale = 0.9904
+ DA scale = 0.98978
+ DA/MC scale = 0.999374
+ HtBin = 4 x = 129.638 y = 0.999374
+ HtBin = 4 exlow = 0.157471 exhig = 0.157471 eylow = 0.0013603 eyhig = 0.0013603
+>>>>>> nEvents_smallestInterval: 1084
+>>> HtBin::5
+>>>>>> nEvents:                  318
+>>>>>> nEvents_gausFit:          318
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+>>>>>> nEvents_mean:             318
+>>>>>> nEvents_recursiveMean:    318
+ >>> fabs(mean-oldMean) = 0
+ >>> fabs(mean-oldMean) = 0
+ FindRecursiveMean HtBin = 5 x = 183.547
+ MC scale = 0.992355
+ DA scale = 0.988752
+ DA/MC scale = 0.99637
+ HtBin = 5 x = 183.547 y = 0.99637
+ HtBin = 5 exlow = 1.48545 exhig = 1.48545 eylow = 0.00217139 eyhig = 0.00217139
+>>>>>> nEvents_smallestInterval: 318
+Info in <TCanvas::Print>: pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf has been created
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf has been created
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf has been created
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf has been created
+Info in <TCanvas::Print>: pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf has been created
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_Zpt_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_ScaleCorrections_HtBin_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DAOverMC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_MC_stdCat_cat3.pdf
+Info in <TCanvas::Print>: Current canvas added to pdf file data//2011/Winter2013/MZ_stdCat_nonGlobe_7TeV-allRange_7TeVTuned_Dphi3p15/h_mee_HtBin_DATA_stdCat_cat3.pdf

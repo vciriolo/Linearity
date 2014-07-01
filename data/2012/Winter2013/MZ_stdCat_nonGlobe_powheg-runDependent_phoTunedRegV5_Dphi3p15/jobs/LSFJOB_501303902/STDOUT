@@ -1,0 +1,23 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/amartell/501303902> on <lxbst2808.cern.ch>
+
+/bin/tcsh
+/afs/cern.ch/work/a/amartell/Linearity/Linearity
+/afs/cern.ch/work/a/amartell/Linearity/Linearity
+/afs/cern.ch/work/a/amartell/Linearity/Linearity
+bin/ already exists
+lib/ already exists
+obj/ already exists
+already set
+5.32/00
+/afs/cern.ch/work/a/amartell/Linearity/CMSSW_5_3_5/bin/slc5_amd64_gcc462:/afs/cern.ch/work/a/amartell/Linearity/CMSSW_5_3_5/external/slc5_amd64_gcc462/bin:/afs/cern.ch/cms/slc5_amd64_gcc462/cms/cmssw/CMSSW_5_3_5/bin/slc5_amd64_gcc462:/afs/cern.ch/cms/slc5_amd64_gcc462/cms/cmssw/CMSSW_5_3_5/external/slc5_amd64_gcc462/bin:/afs/cern.ch/cms/slc5_amd64_gcc462/external/gcc/4.6.2/bin:/afs/cern.ch/user/a/amartell/bin:/afs/cern.ch/user/a/amartell/scripts:/usr/sue/bin:/afs/cern.ch/cms/bin/amd64_linux26:/afs/cern.ch/cms/system/bin:/usr/local/bin:/usr/local/bin/X11:/usr/bin:/bin:/usr/bin/X11:/cern/pro/bin:/afs/cern.ch/cms/caf/scripts:/afs/cern.ch/cms/common:/afs/cern.ch/cms/bin:/afs/cern.ch/cms/utils:/afs/cern.ch/work/a/amartell/Linearity/Linearity/bin:/afs/cern.ch/work/a/amartell/Linearity/Linearity/../CommonUtils/bin:/afs/cern.ch/project/gd/LCG-share/3.2.10-1/d-cache/srm/bin:/afs/cern.ch/project/gd/LCG-share/3.2.10-1/d-cache/dcap/bin:/afs/cern.ch/project/gd/LCG-share/3.2.10-1/edg/bin:/afs/cern.ch/project/gd/LCG-share/3.2.10-1/glite/bin:/afs/cern.ch/project/gd/LCG-share/3.2.10-1/globus/bin:/afs/cern.ch/project/gd/LCG-share/3.2.10-1/lcg/bin:/afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_10_2_patch4/python:/usr/lib64/qt-3.3/bin:/usr/kerberos/bin:/afs/cern.ch/sw/root/v5.02.00/slc3_gcc3.2.3/root/bin:/afs/cern.ch/sw/lcg/external/clhep/2.0.2.2/slc3_ia32_gcc323/bin/:/afs/cern.ch/sw/lcg/external/clhep/2.0.2.2/slc3_ia32_gcc323/bin:/afs/cern.ch/work/a/amartell/Linearity/Linearity//data/2012/Winter2013/MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15/jobs/
+
+Job finished at Fri Feb 14 10:26:22 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:02 NCU hours (2 NCU seconds)
+
+CERN statistics: This job used 0:00:02 KSI2K hours (2 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

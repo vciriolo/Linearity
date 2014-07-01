@@ -1,0 +1,1 @@
+root://eoscms//eos/cms/store/group/alca_ecalcalib/ecalelf/ntuples/7TeV/ALCARECOSIM/DYToEE_M20_powheg-Summer11-START53-ZSkim/allRange/78TeVtrain_tris/DYToEE_M20_powheg-Summer11-START53-ZSkim-allRange.root

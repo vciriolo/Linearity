@@ -1,0 +1,283 @@
+>>> Parsing /afs/cern.ch/work/a/amartell/Linearity/Linearity//data/2012/Winter2013/EoP_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15/jobs//params_cat3.cfg file
+
+>>> Get trees
+140314 17:08:25 001 Xrd: GoToAnotherServer: Going to: lxfsrg21a07.cern.ch:1095
+140314 17:08:27 001 Xrd: GoToAnotherServer: Going to: lxfsrb4805.cern.ch:1095
+>>>   MC:  7005489 entries
+140314 17:08:28 001 Xrd: GoToAnotherServer: Going to: lxfsre11a08.cern.ch:1095
+140314 17:08:28 001 Xrd: GoToAnotherServer: Going to: lxfsre11a08.cern.ch:1095
+140314 17:08:28 001 Xrd: GoToAnotherServer: Going to: lxfsrg19a02.cern.ch:1095
+>>> DATA:  5604871 entries
+
+>>> define branch addresses
+
+>>> Setup data scale corrections
+>>>>>> ScaleCorrector::SetShervinRunDepScaleMap begin
+>>>>>> ScaleCorrector::SetShervinRunDepScaleMap end
+>>>>>> ScaleCorrector::SetShervinEtDepScaleMap begin
+>>>>>> ScaleCorrector::SetShervinEtDepScaleMap end
+
+>>> Setup MC extrasmearing
+>>>>>> Smearer::SetShervinExtraSmearingMap begin
+>>>>>> Smearer::SetShervinExtraSmearingMap end
+>>>>>> Smearer::SetShervinEtExtraSmearingMap begin
+>>>>>> Smearer::SetShervinEtExtraSmearingMap end
+
+>>> Setup MC pileup reweighting
+>>>>>> PUReweighting::ReadPUWeights:   PUWeights[Run2012AB] filled from PUWeights_DYToEE_M20_powheg-Summer12-START53-ZSkim-runDependent_Run2012AB.root
+>>>>>> PUReweighting::ReadPUWeights:   PUWeights[Run2012C]  filled from PUWeights_DYToEE_M20_powheg-Summer12-START53-ZSkim-runDependent_Run2012C.root
+>>>>>> PUReweighting::ReadPUWeights:   PUWeights[Run2012D]  filled from PUWeights_DYToEE_M20_powheg-Summer12-START53-ZSkim-runDependent_Run2012D.root
+
+>>> Setup eta/R9 reweighting
+
+>>> Read data from MC sample
+>>>>>> reading   MC entry 0 / 7005489140314 17:08:29 001 Xrd: GoToAnotherServer: Going to: lxfsrg21a07.cern.ch:1095
+>>>>>> reading   MC entry 100000 / 7005489>>>>>> reading   MC entry 200000 / 7005489>>>>>> reading   MC entry 300000 / 7005489>>>>>> reading   MC entry 400000 / 7005489>>>>>> reading   MC entry 500000 / 7005489>>>>>> reading   MC entry 600000 / 7005489>>>>>> reading   MC entry 700000 / 7005489>>>>>> reading   MC entry 800000 / 7005489>>>>>> reading   MC entry 900000 / 7005489>>>>>> reading   MC entry 1000000 / 7005489>>>>>> reading   MC entry 1100000 / 7005489>>>>>> reading   MC entry 1200000 / 7005489>>>>>> reading   MC entry 1300000 / 7005489>>>>>> reading   MC entry 1400000 / 7005489>>>>>> reading   MC entry 1500000 / 7005489>>>>>> reading   MC entry 1600000 / 7005489>>>>>> reading   MC entry 1700000 / 7005489>>>>>> reading   MC entry 1800000 / 7005489>>>>>> reading   MC entry 1900000 / 7005489>>>>>> reading   MC entry 2000000 / 7005489>>>>>> reading   MC entry 2100000 / 7005489>>>>>> reading   MC entry 2200000 / 7005489>>>>>> reading   MC entry 2300000 / 7005489>>>>>> reading   MC entry 2400000 / 7005489>>>>>> reading   MC entry 2500000 / 7005489>>>>>> reading   MC entry 2600000 / 7005489>>>>>> reading   MC entry 2700000 / 7005489>>>>>> reading   MC entry 2800000 / 7005489>>>>>> reading   MC entry 2900000 / 7005489>>>>>> reading   MC entry 3000000 / 7005489140314 17:09:11 001 Xrd: GoToAnotherServer: Going to: lxfsrb4805.cern.ch:1095
+>>>>>> reading   MC entry 3100000 / 7005489>>>>>> reading   MC entry 3200000 / 7005489>>>>>> reading   MC entry 3300000 / 7005489>>>>>> reading   MC entry 3400000 / 7005489>>>>>> reading   MC entry 3500000 / 7005489>>>>>> reading   MC entry 3600000 / 7005489>>>>>> reading   MC entry 3700000 / 7005489>>>>>> reading   MC entry 3800000 / 7005489>>>>>> reading   MC entry 3900000 / 7005489>>>>>> reading   MC entry 4000000 / 7005489>>>>>> reading   MC entry 4100000 / 7005489>>>>>> reading   MC entry 4200000 / 7005489>>>>>> reading   MC entry 4300000 / 7005489>>>>>> reading   MC entry 4400000 / 7005489>>>>>> reading   MC entry 4500000 / 7005489>>>>>> reading   MC entry 4600000 / 7005489>>>>>> reading   MC entry 4700000 / 7005489>>>>>> reading   MC entry 4800000 / 7005489>>>>>> reading   MC entry 4900000 / 7005489>>>>>> reading   MC entry 5000000 / 7005489>>>>>> reading   MC entry 5100000 / 7005489>>>>>> reading   MC entry 5200000 / 7005489>>>>>> reading   MC entry 5300000 / 7005489>>>>>> reading   MC entry 5400000 / 7005489>>>>>> reading   MC entry 5500000 / 7005489>>>>>> reading   MC entry 5600000 / 7005489>>>>>> reading   MC entry 5700000 / 7005489>>>>>> reading   MC entry 5800000 / 7005489>>>>>> reading   MC entry 5900000 / 7005489>>>>>> reading   MC entry 6000000 / 7005489>>>>>> reading   MC entry 6100000 / 7005489>>>>>> reading   MC entry 6200000 / 7005489>>>>>> reading   MC entry 6300000 / 7005489>>>>>> reading   MC entry 6400000 / 7005489>>>>>> reading   MC entry 6500000 / 7005489>>>>>> reading   MC entry 6600000 / 7005489>>>>>> reading   MC entry 6700000 / 7005489>>>>>> reading   MC entry 6800000 / 7005489>>>>>> reading   MC entry 6900000 / 7005489>>>>>> reading   MC entry 7000000 / 7005489
+>>> Read data from DATA sample
+>>>>>> reading DATA entry 0 / 5604871140314 17:10:03 001 Xrd: GoToAnotherServer: Going to: lxfsra22a04.cern.ch:1095
+>>>>>> reading DATA entry 100000 / 5604871>>>>>> reading DATA entry 200000 / 5604871>>>>>> reading DATA entry 300000 / 5604871140314 17:10:08 001 Xrd: GoToAnotherServer: Going to: lxfsre11a08.cern.ch:1095
+>>>>>> reading DATA entry 400000 / 5604871>>>>>> reading DATA entry 500000 / 5604871>>>>>> reading DATA entry 600000 / 5604871>>>>>> reading DATA entry 700000 / 5604871>>>>>> reading DATA entry 800000 / 5604871>>>>>> reading DATA entry 900000 / 5604871>>>>>> reading DATA entry 1000000 / 5604871>>>>>> reading DATA entry 1100000 / 5604871>>>>>> reading DATA entry 1200000 / 5604871>>>>>> reading DATA entry 1300000 / 5604871>>>>>> reading DATA entry 1400000 / 5604871>>>>>> reading DATA entry 1500000 / 5604871>>>>>> reading DATA entry 1600000 / 5604871>>>>>> reading DATA entry 1700000 / 5604871>>>>>> reading DATA entry 1800000 / 5604871>>>>>> reading DATA entry 1900000 / 5604871>>>>>> reading DATA entry 2000000 / 5604871>>>>>> reading DATA entry 2100000 / 5604871>>>>>> reading DATA entry 2200000 / 5604871>>>>>> reading DATA entry 2300000 / 5604871>>>>>> reading DATA entry 2400000 / 5604871140314 17:10:30 001 Xrd: GoToAnotherServer: Going to: lxfsra14a07.cern.ch:1095
+>>>>>> reading DATA entry 2500000 / 5604871>>>>>> reading DATA entry 2600000 / 5604871>>>>>> reading DATA entry 2700000 / 5604871>>>>>> reading DATA entry 2800000 / 5604871>>>>>> reading DATA entry 2900000 / 5604871>>>>>> reading DATA entry 3000000 / 5604871>>>>>> reading DATA entry 3100000 / 5604871>>>>>> reading DATA entry 3200000 / 5604871>>>>>> reading DATA entry 3300000 / 5604871>>>>>> reading DATA entry 3400000 / 5604871>>>>>> reading DATA entry 3500000 / 5604871>>>>>> reading DATA entry 3600000 / 5604871>>>>>> reading DATA entry 3700000 / 5604871>>>>>> reading DATA entry 3800000 / 5604871>>>>>> reading DATA entry 3900000 / 5604871>>>>>> reading DATA entry 4000000 / 5604871>>>>>> reading DATA entry 4100000 / 5604871>>>>>> reading DATA entry 4200000 / 5604871>>>>>> reading DATA entry 4300000 / 5604871>>>>>> reading DATA entry 4400000 / 5604871>>>>>> reading DATA entry 4500000 / 5604871>>>>>> reading DATA entry 4600000 / 5604871>>>>>> reading DATA entry 4700000 / 5604871>>>>>> reading DATA entry 4800000 / 5604871>>>>>> reading DATA entry 4900000 / 5604871>>>>>> reading DATA entry 5000000 / 5604871>>>>>> reading DATA entry 5100000 / 5604871>>>>>> reading DATA entry 5200000 / 5604871>>>>>> reading DATA entry 5300000 / 5604871>>>>>> reading DATA entry 5400000 / 5604871>>>>>> reading DATA entry 5500000 / 5604871>>>>>> reading DATA entry 5600000 / 5604871
+******************************************************************************
+*Tree    :tree_da   : MC                                                     *
+*Entries :   673286 : Total =        52815659 bytes  File  Size =          0 *
+*        :          : Tree compression factor =   1.00                       *
+******************************************************************************
+*Br    0 :scEta1    : scEta1/F                                               *
+*Entries :   673286 : Total  Size=    2709210 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    1 :scEta2    : scEta2/F                                               *
+*Entries :   673286 : Total  Size=    2709210 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    2 :R91       : R91/F                                                  *
+*Entries :   673286 : Total  Size=    2708688 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    3 :R92       : R92/F                                                  *
+*Entries :   673286 : Total  Size=    2708688 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    4 :scEReg1   : scEReg1/F                                              *
+*Entries :   673286 : Total  Size=    2709384 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    5 :scEReg2   : scEReg2/F                                              *
+*Entries :   673286 : Total  Size=    2709384 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    6 :scEne1    : scEne1/F                                               *
+*Entries :   673286 : Total  Size=    2709210 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    7 :scEne2    : scEne2/F                                               *
+*Entries :   673286 : Total  Size=    2709210 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    8 :cat1      : cat1/I                                                 *
+*Entries :   673286 : Total  Size=    2708862 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    9 :cat2      : cat2/I                                                 *
+*Entries :   673286 : Total  Size=    2708862 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   10 :gs1       : gs1/b                                                  *
+*Entries :   673286 : Total  Size=     677382 bytes  All baskets in memory   *
+*Baskets :       21 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   11 :gs2       : gs2/b                                                  *
+*Entries :   673286 : Total  Size=     677382 bytes  All baskets in memory   *
+*Baskets :       21 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   12 :ZpT       : ZpT/F                                                  *
+*Entries :   673286 : Total  Size=    2708688 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   13 :mee       : mee/F                                                  *
+*Entries :   673286 : Total  Size=    2708688 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   14 :Ht        : Ht/F                                                   *
+*Entries :   673286 : Total  Size=    2708514 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   15 :EoP1      : mEoP1/F                                                *
+*Entries :   673286 : Total  Size=    2708865 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   16 :EoP2      : mEoP2/F                                                *
+*Entries :   673286 : Total  Size=    2708865 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   17 :Et1       : Et1/F                                                  *
+*Entries :   673286 : Total  Size=    2708688 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   18 :Et2       : Et2/F                                                  *
+*Entries :   673286 : Total  Size=    2708688 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   19 :weight    : weight/F                                               *
+*Entries :   673286 : Total  Size=    2709210 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br   20 :Dphi      : Dphi/F                                                 *
+*Entries :   673286 : Total  Size=    2708862 bytes  All baskets in memory   *
+*Baskets :       84 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+
+>>> sort MC events vs. Et
+>>>>>> Sorting variable Et
+>>>>>> Effective entries: 924900
+>>>>>> sortedEntries.size(): 924900
+
+>>> define bins
+>>> Et bin 0:   [30,35]
+>>> Et bin 1:   [35,40]
+>>> Et bin 2:   [40,45]
+>>> Et bin 3:   [45,50]
+>>> Et bin 4:   [50,60]
+>>> Et bin 5:   [60,75]
+>>> Et bin 6:   [75,150]
+>>> Et bin 7:   [150,1000]
+
+>>> Ht bin 0:   [60,70]
+>>> Ht bin 1:   [70,80]
+>>> Ht bin 2:   [80,90]
+>>> Ht bin 3:   [90,100]
+>>> Ht bin 4:   [100,120]
+>>> Ht bin 5:   [120,150]
+>>> Ht bin 6:   [150,300]
+>>> Ht bin 7:   [300,2000]
+
+
+>>> define histograms
+
+>>> fill histograms
+reading   MC entry 0 / 924900reading   MC entry 100000 / 924900reading   MC entry 200000 / 924900reading   MC entry 300000 / 924900reading   MC entry 400000 / 924900reading   MC entry 500000 / 924900reading   MC entry 600000 / 924900reading   MC entry 700000 / 924900reading   MC entry 800000 / 924900reading   MC entry 900000 / 924900
+
+****** step 1 ******
+reading DATA entry 0 / 772156reading DATA entry 100000 / 772156reading DATA entry 200000 / 772156reading DATA entry 300000 / 772156reading DATA entry 400000 / 772156reading DATA entry 500000 / 772156reading DATA entry 600000 / 772156reading DATA entry 700000 / 772156
+
+>>> find scale estimator
+>>> EtBin::0
+>>>>>> nEvents:                  132294
+>>>>>> nEvents_fit:              132294
+ scale = 1.00205+/-0.0889196
+ >>> scaleErr_DA = 0.0889196
+>>>>>> nEvents_gausFit:          132294
+>>>>>> nEvents_mean:             132294
+>>>>>> nEvents_recursiveMean:    132294
+ >>> fabs(mean-oldMean) = 9.87788e-05
+ >>> fabs(mean-oldMean) = 9.42947e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 0.9625
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 0.9975
+>>>>>> nEvents_smallestInterval: 132294
+>>> EtBin::1
+>>>>>> nEvents:                  187793
+>>>>>> nEvents_fit:              187793
+ scale = 0.998791+/-0.109731
+ >>> scaleErr_DA = 0.109731
+>>>>>> nEvents_gausFit:          187793
+>>>>>> nEvents_mean:             187793
+>>>>>> nEvents_recursiveMean:    187793
+ >>> fabs(mean-oldMean) = 5.89559e-05
+ >>> fabs(mean-oldMean) = 9.71193e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 0.9925
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 0.9875
+>>>>>> nEvents_smallestInterval: 187793
+>>> EtBin::2
+>>>>>> nEvents:                  217664
+>>>>>> nEvents_fit:              217664
+ scale = 0.997925+/-0.12002
+ >>> scaleErr_DA = 0.12002
+>>>>>> nEvents_gausFit:          217664
+>>>>>> nEvents_mean:             217664
+>>>>>> nEvents_recursiveMean:    217664
+ >>> fabs(mean-oldMean) = 9.74055e-05
+ >>> fabs(mean-oldMean) = 4.71919e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 1.0075
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 0.9975
+>>>>>> nEvents_smallestInterval: 217664
+>>> EtBin::3
+>>>>>> nEvents:                  130693
+>>>>>> nEvents_fit:              130693
+ scale = 0.997305+/-0.0989903
+ >>> scaleErr_DA = 0.0989903
+>>>>>> nEvents_gausFit:          130693
+>>>>>> nEvents_mean:             130693
+>>>>>> nEvents_recursiveMean:    130693
+ >>> fabs(mean-oldMean) = 7.92966e-05
+ >>> fabs(mean-oldMean) = 8.65426e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 1.0125
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 0.9775
+>>>>>> nEvents_smallestInterval: 130693
+>>> EtBin::4
+>>>>>> nEvents:                  71346
+>>>>>> nEvents_fit:              71346
+ scale = 1.00245+/-0.0751927
+ >>> scaleErr_DA = 0.0751927
+>>>>>> nEvents_gausFit:          71346
+>>>>>> nEvents_mean:             71346
+>>>>>> nEvents_recursiveMean:    71346
+ >>> fabs(mean-oldMean) = 9.59707e-05
+ >>> fabs(mean-oldMean) = 8.39277e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 1.0025
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 1.0225
+>>>>>> nEvents_smallestInterval: 71346
+>>> EtBin::5
+>>>>>> nEvents:                  19403
+>>>>>> nEvents_fit:              19403
+ scale = 0.99228+/-0.0324595
+ >>> scaleErr_DA = 0.0324595
+>>>>>> nEvents_gausFit:          19403
+>>>>>> nEvents_mean:             19403
+>>>>>> nEvents_recursiveMean:    19403
+ >>> fabs(mean-oldMean) = 5.10122e-05
+ >>> fabs(mean-oldMean) = 5.80923e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 1.0075
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 1.0425
+>>>>>> nEvents_smallestInterval: 19403
+>>> EtBin::6
+>>>>>> nEvents:                  6915
+>>>>>> nEvents_fit:              6915
+ scale = 1.01861+/-0.0237496
+ >>> scaleErr_DA = 0.0237496
+>>>>>> nEvents_gausFit:          6915
+>>>>>> nEvents_mean:             6915
+>>>>>> nEvents_recursiveMean:    6915
+ >>> fabs(mean-oldMean) = 0
+ >>> fabs(mean-oldMean) = 6.7302e-05
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 2.5625
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 0.9825
+>>>>>> nEvents_smallestInterval: 6915
+>>> EtBin::7
+>>>>>> nEvents:                  354
+>>>>>> nEvents_fit:              354
+ scale = 0.997782+/-0.00568092
+ >>> scaleErr_DA = 0.00568092
+>>>>>> nEvents_gausFit:          354
+>>>>>> nEvents_mean:             354
+>>>>>> nEvents_recursiveMean:    354
+ >>> fabs(mean-oldMean) = 0
+ >>> fabs(mean-oldMean) = 0
+ >>>> h_EoP_EtBin_MC[EtBin]->GetBinCenter(h_EoP_EtBin_MC[EtBin]->GetMaximumBin()) = 1.3125
+ >>>> h_EoP_EtBin_recursiveMean_DA[EtBin]->GetBinCenter(h_EoP_EtBin_recursiveMean_DA[EtBin]->GetMaximumBin()) = 0.8675
+>>>>>> nEvents_smallestInterval: 354
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_Zpt
+Warning in <TCanvas::Constructor>: Deleting canvas with same name: c_EoP

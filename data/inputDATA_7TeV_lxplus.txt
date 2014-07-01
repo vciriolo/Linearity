@@ -1,0 +1,2 @@
+root://eoscms//eos/cms/store/group/alca_ecalcalib/ecalelf/ntuples/7TeV/ALCARECO/DoubleElectron-ZSkim-RUN2011A-21Jun2013-v1/160329-173692/160404-180252-08Nov_v2/78TeVtrain_bis/DoubleElectron-ZSkim-RUN2011A-21Jun2013-v1-160329-173692.root
+root://eoscms//eos/cms/store/group/alca_ecalcalib/ecalelf/ntuples/7TeV/ALCARECO/DoubleElectron-ZSkim-RUN2011B-21Jun2013-v1/175832-180252/160404-180252-08Nov_v2/78TeVtrain_bis/DoubleElectron-ZSkim-RUN2011B-21Jun2013-v1-175832-180252.root
