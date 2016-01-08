@@ -243,11 +243,9 @@ int main(int argc, char** argv)
 	    double statE2 = pow(ey,2);
 	    double x,y;
 	    g[iCat] -> GetPoint(point, x, y);
-	    // 	    double sysE2 = pow(0.01*SysError[iCat][point], 2);
+	    double sysE2 = pow(0.01*SysError[iCat][point], 2);
 //   	    g[iCat] -> SetPointEYhigh(point, sqrt(statE2 + sysE2) );
 //   	    g[iCat] -> SetPointEYlow (point, sqrt(statE2 + sysE2) );
-//	    double sysE2 = pow(0.1*(0.995-y), 2);
-	    double sysE2 = sqrt(pow(0.5*(1.-y), 2));
 	    std::cout << " point = " << point << " y = " << y << " statE2 = " << sqrt(statE2) << " sysE2 = " << sysE2 << std::endl;
 	    if( (methods.at(iMeth)) == "fit"){
 	      std::cout << " caso fit " << std::endl;

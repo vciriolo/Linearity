@@ -55,16 +55,16 @@ int main()
   std::string TF1_folderSys = "../TF1_"+methodName+"_syst";
 
   //  std::string HggCatType = "MVA_7TeV";
-    std::string HggCatType = "MVA_8TeV";
+  std::string HggCatType = "MVA_8TeV";
   //    std::string HggCatType = "CiC_7TeV";
   //  std::string HggCatType = "CiC_8TeV";
-
+  
   //std::string analysis  = "CiC"; 
   std::string analysis = "stdCat";
   
   bool checkSystematic = false;
   //////////////// da sotto qui ok 
-  //////////////// cambia sopra in caso
+  //////////////// cambia sopra in caso 
 
   std::string Energy;
 
@@ -402,7 +402,8 @@ int main()
 //     trees[3] = (TTree*)inFile[3]->Get("opttree");
   }
 
-  std::cout << " Input presi " << std::endl;
+
+  std::cout << " >>> Input presi " << std::endl;
 
   float full_weight;
   float full_cat;

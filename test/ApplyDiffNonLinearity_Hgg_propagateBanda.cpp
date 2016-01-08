@@ -51,8 +51,8 @@ double BandaCat0(double* x, double* par)
   if(60. < x[0] && x[0] <= 75.)      return (1.0002 + par[0]* 0.000532232);
   if(75. < x[0] && x[0] <= 100.)     return (1.00049 + par[0]* 0.000897605);
   if(x[0] > 100.)                    return (1.00231 + par[0]* 0.00176987);
-//  if(60. < x[0] && x[0] <= 75.)      return(1.0002 + par[0]* 0.000564709);
-//   if(x[0] > 75.) return(1.00118 + par[0]* 0.00109502);
+  //  if(60. < x[0] && x[0] <= 75.)      return(1.0002 + par[0]* 0.000564709);
+  //   if(x[0] > 75.) return(1.00118 + par[0]* 0.00109502);
   return 1.;
 }
 
@@ -66,8 +66,8 @@ double BandaCat1(double* x, double* par)
   if(60. < x[0] && x[0] <= 75.)      return (0.999977 + par[0]* 0.000430609);
   if(75. < x[0] && x[0] <= 100.)     return (0.99935 + par[0]* 0.00104642);
   if(x[0] > 100.)                    return (1.00156 + par[0]* 0.00199785);
-//   if(60. < x[0] && x[0] <= 75.) return(0.999977 + par[0]* 0.000427457);
-//   if(x[0] > 75.) return(0.999892 + par[0]* 0.000602402);
+  //   if(60. < x[0] && x[0] <= 75.) return(0.999977 + par[0]* 0.000427457);
+  //   if(x[0] > 75.) return(0.999892 + par[0]* 0.000602402);
   return 1.;
 }
 
@@ -81,8 +81,8 @@ double BandaCat2(double* x, double* par)
   if(60. < x[0] && x[0] <= 75.)      return (1.00304 + par[0]* 0.00260998);
   if(75. < x[0] && x[0] <= 100.)     return (0.997809 + par[0]* 0.00263123);
   if(x[0] > 100.)                    return (1.004 + par[0]* 0.00425648);
-//   if(60. < x[0] && x[0] <= 75.) return(1.00304 + par[0]* 0.0025946);
-//   if(x[0] > 75.) return(0.999712 + par[0]* 0.00147001);
+  //   if(60. < x[0] && x[0] <= 75.) return(1.00304 + par[0]* 0.0025946);
+  //   if(x[0] > 75.) return(0.999712 + par[0]* 0.00147001);
   return 1.;
 }
 
@@ -96,8 +96,8 @@ double BandaCat3(double* x, double* par)
   if(60. < x[0] && x[0] <= 75.)      return (1.00305 + par[0]* 0.00251856);
   if(75. < x[0] && x[0] <= 100.)     return (1.00111 + par[0]* 0.00220828);
   if(x[0] > 100.)                    return (1.00799 + par[0]* 0.00676785);
-//   if(60. < x[0] && x[0] <= 75.) return(1.00305 + par[0]* 0.0026342);
-//   if(x[0] > 75.) return(1.0027 + par[0]* 0.00288338);
+  //   if(60. < x[0] && x[0] <= 75.) return(1.00305 + par[0]* 0.0026342);
+  //   if(x[0] > 75.) return(1.0027 + par[0]* 0.00288338);
   return 1.;
 }
 
@@ -313,7 +313,7 @@ int main()
   for(int iCat = 0; iCat < nCats; ++iCat)
     C[iCat] = cholesky(corMatrix[iCat],nPar);
 
-  std::cout << " Covarianze fatte " << std::endl;
+  std::cout << " Now Covarianze fatte " << std::endl;
   
   
   //------------

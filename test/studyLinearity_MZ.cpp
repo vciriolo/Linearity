@@ -276,7 +276,7 @@ int main(int argc, char** argv)
   
   if( ntu_MC->GetEntries() == 0 || ntu_DA->GetEntries() == 0 )
   {
-    std::cout << ">>> compareZPeaks::Error: at least one file is empty" << std::endl;
+    std::cout << " >>> compareZPeaks::Error: at least one file is empty " << std::endl;
     return -1;
   }
   
@@ -581,7 +581,7 @@ int main(int argc, char** argv)
   //--------------------------
   // pileup reweighting for MC
   std::cout << std::endl;
-  std::cout << ">>> Setup MC pileup reweighting" << std::endl;
+  std::cout << " >>> Setup MC pileup reweighting" << std::endl;
   
   std::map<std::string, TH1F*>* PUWeights = ReadPUWeights(MCGen,runDepFlag,runMin,runMax);
   
@@ -590,7 +590,7 @@ int main(int argc, char** argv)
   //-------------------
   // eta/R9 reweighting
   std::cout << std::endl;
-  std::cout << ">>> Setup eta/R9 reweighting" << std::endl;
+  std::cout << " >>> Setup eta/R9 reweighting" << std::endl;
     
   std::string dataDir(getenv("LINEARITY"));
   TFile* etaR9reweightFile = TFile::Open((dataDir+"/data/zee_etaR9reweight.root").c_str());
@@ -625,12 +625,12 @@ int main(int argc, char** argv)
   outFile = TFile::Open((plotFolderName+"/studyLinearity_MZ_"+label+".root").c_str(),"RECREATE");
   
   for(unsigned int i = 0; i < nHtBins; ++i)
-    std::cout << ">>> Ht bin " << i << ":   [" << HtBinEdges->at(i) << "," << HtBinEdges->at(i+1) << "]" << std::endl;
+    std::cout << " >>> Ht bin " << i << ":   [" << HtBinEdges->at(i) << "," << HtBinEdges->at(i+1) << "]" << std::endl;
   std::cout << std::endl;
   
   
   //define bins  
-  std::cout << ">>> define bins" << std::endl;
+  std::cout << " >>> define bins" << std::endl;
   EtBinEdges = new std::vector<double>;
   for(unsigned int HtBinEdgeIt = 0; HtBinEdgeIt < HtBinEdges->size(); ++HtBinEdgeIt)
     EtBinEdges -> push_back( 0.5 * HtBinEdges->at(HtBinEdgeIt) );
@@ -638,7 +638,7 @@ int main(int argc, char** argv)
   //  std::cout << " EtBinEdges size = " << nEtBins << std::endl;  
 
   for(unsigned int i = 0; i < nEtBins; ++i)
-    std::cout << ">>> Et bin " << i << ":   [" << EtBinEdges->at(i) << "," << EtBinEdges->at(i+1) << "]" << std::endl;
+    std::cout << " >>> Et bin " << i << ":   [" << EtBinEdges->at(i) << "," << EtBinEdges->at(i+1) << "]" << std::endl;
   std::cout << std::endl;
   
   HtBinEdgesDouble = new double[HtBinEdges->size()];
@@ -649,7 +649,7 @@ int main(int argc, char** argv)
   //------------------
   // define histograms
   std::cout << std::endl;
-  std::cout << ">>> define histograms" << std::endl;
+  std::cout << " >>> define histograms" << std::endl;
   
   TH1F* h_scEta_MC = new TH1F("h_scEta_MC","",500,-2.5,2.5);
   h_scEta_MC -> Sumw2();
@@ -776,7 +776,7 @@ int main(int argc, char** argv)
   //-----------------
   // Loop over events
   std::cout << std::endl;
-  std::cout << ">>> Read data from MC sample" << std::endl;
+  std::cout << " >>> Read data from MC sample" << std::endl;
   
   int nEntries_MC = ntu_MC -> GetEntriesFast();
   for(int ientry = 0; ientry < nEntries_MC; ++ientry)

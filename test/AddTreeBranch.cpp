@@ -167,8 +167,8 @@ int main()
       if( ientry%100000 == 0 ) std::cout << ">>>>>> reading   DA entry " << ientry << " / " << nEntries_DA << "\r" << std::flush;
       ntu_DA->GetEntry(ientry);
 
-      //      std::cout << " runId = " << runId << std::endl;
-      std::cout << " S " << lumiBlock << " " << runId << " " << eventNumber << std::endl;
+      // std::cout << " runId = " << runId << std::endl;
+      std::cout << " >>> S " << lumiBlock << " " << runId << " " << eventNumber << std::endl;
 
       R91 = R9[0];
       R92 = R9[1];
@@ -208,7 +208,7 @@ int main()
 	  if(Grun != runId) continue;
 	  if(Gevent != eventNumber) continue;
 
-	  std::cout << " G " << Glumis << " " << Grun << " " << Gevent << std::endl;
+	  std::cout << " >>> G " << Glumis << " " << Grun << " " << Gevent << std::endl;
 
  	  if(fabs(1.*eta1 - 1.*Geta1) > 0.003 || fabs(1.*eta2 - 1.*Geta2) > 0.003) continue; 
  	  if(R91 < 1.*0.94 && 1.*Gr91 > 0.94) continue;
@@ -261,7 +261,7 @@ int main()
       ntu_MC->GetEntry(ientry);
 
       //      std::cout << " runId = " << runId << std::endl;
-      std::cout << " S " << lumiBlock << " " << runId << " " << eventNumber << std::endl;
+      std::cout << " >>> S " << lumiBlock << " " << runId << " " << eventNumber << std::endl;
 
       R91 = R9[0];
       R92 = R9[1];

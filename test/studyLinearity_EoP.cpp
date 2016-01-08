@@ -68,7 +68,7 @@ int main(int argc, char** argv)
   //Check if all nedeed arguments to parse are there
   if(argc != 2)
   {
-    std::cerr << ">>> studyLinearity_EoP::usage: " << argv[0] << " configFileName" << std::endl;
+    std::cerr << " >>> studyLinearity_EoP::usage: " << argv[0] << " configFileName" << std::endl;
     return -1;
   }
   
@@ -197,7 +197,7 @@ int main(int argc, char** argv)
   //----------
   // Get trees
   std::cout << std::endl;
-  std::cout << ">>> Get trees" << std::endl;
+  std::cout << " >>> Get trees" << std::endl;
   
   std::string treeNameMC;
   std::string treeNameDA;
@@ -1164,7 +1164,7 @@ int main(int argc, char** argv)
   //------------
   // sort events
   std::cout << std::endl;
-  std::cout << ">>> sort MC events vs. Et" << std::endl;
+  std::cout << " >>> sort MC events vs. Et" << std::endl;
   
   int nEntries = Et_MC.size();
   int nSavePts = 0;

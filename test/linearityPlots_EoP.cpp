@@ -40,16 +40,12 @@ std::string fitMethod = "pol1";
 
 
 
-
-
-
-
 int main(int argc, char** argv)
 {
   //Check if all nedeed arguments to parse are there
   if( argc < 2 )
   {
-    std::cerr << ">>> linearityPlots_Eop::usage: " << argv[0] << " evtsPerPoint_cat0 (evtsPerPoint_cat1 evtsPerPoint_cat2 ...)" << std::endl;
+    std::cerr << " >>> linearityPlots_Eop::usage: " << argv[0] << " evtsPerPoint_cat0 (evtsPerPoint_cat1 evtsPerPoint_cat2 ...)" << std::endl;
     return -1;
   }
   
@@ -230,13 +226,9 @@ directories.push_back(("data/2012/Winter2013/EoP_"+analysis+"_nonGlobe_powheg-ru
 //  	    double sysE2 = pow(SysCat[iCat], 2);                     
 //  	    g[iCat] -> SetPointEYhigh(point, sqrt(statE2 + sysE2) ); 
 //  	    g[iCat] -> SetPointEYlow (point, sqrt(statE2 + sysE2) ); 
-//  	    double sysE2 = pow(0.1*(0.995-y), 2);
-//  	    g[iCat] -> SetPointEYhigh(point, sqrt(statE2 + sysE2) );
-//  	    g[iCat] -> SetPointEYlow (point, sqrt(statE2 + sysE2) );
-
-	    double sysE2 = sqrt(pow(0.5*(1.-y), 2));
- 	    g[iCat] -> SetPointEYhigh(point, sqrt(statE2) + sysE2 );
- 	    g[iCat] -> SetPointEYlow (point, sqrt(statE2) + sysE2 );
+	    double sysE2 = pow(0.01*SysError[iCat][point], 2);
+	    g[iCat] -> SetPointEYhigh(point, sqrt(statE2 + sysE2) );
+	    g[iCat] -> SetPointEYlow (point, sqrt(statE2 + sysE2) );
 	  }
 	}
 	if(fitTemplate){
@@ -605,11 +597,13 @@ directories.push_back(("data/2012/Winter2013/EoP_"+analysis+"_nonGlobe_powheg-ru
           }
         }
       }
+
       TFile perTommaso("perTommaso_EoP_Etdep.root","recreate");
       for(int i =0; i<4; ++i){
 	g[i]->Write(Form("graph_cat%d",i));
       }
       perTommaso.Close();
+
     }
   }    
 }

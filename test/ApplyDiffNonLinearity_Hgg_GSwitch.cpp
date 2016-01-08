@@ -110,7 +110,7 @@ int main()
     f_stat[iCat] = (TF1*)( funcFile->Get(Form("HT_cat%d",iCat)) );
     f_stat[iCat] -> SetName(Form("f_stat_cat%d_std",iCat));
   }
-  std::cout << " Stat presa " << std::endl;  
+  std::cout << " >>> Stat presa " << std::endl;  
 
   double** corMatrix = new double*[nCats];
   if(methodName == "exp"){

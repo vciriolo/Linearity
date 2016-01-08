@@ -313,44 +313,44 @@ int main()
 
   if(HggCatType == "CiC_8TeV"){
     inFile[0] = new TFile("../data/Hgg_signalTrees/Hgg_Dump_CiC_8TeV.root", "read");
-//     inFile[1] = new TFile("../data/histograms_CMS-HGG.root", "read");
-//     inFile[2] = new TFile("../data/histograms_CMS-HGG.root", "read");
-//     inFile[3] = new TFile("../data/histograms_CMS-HGG.root", "read");
+    //     inFile[1] = new TFile("../data/histograms_CMS-HGG.root", "read");
+    //     inFile[2] = new TFile("../data/histograms_CMS-HGG.root", "read");
+    //     inFile[3] = new TFile("../data/histograms_CMS-HGG.root", "read");
     trees[0] = (TTree*)inFile[0]->Get("opttree");
-//     trees[1] = (TTree*)inFile[1]->Get("vbf_m125_8TeV"); 
-//     trees[2] = (TTree*)inFile[2]->Get("wzh_m125_8TeV"); 
-//     trees[3] = (TTree*)inFile[3]->Get("tth_m125_8TeV"); 
+    //     trees[1] = (TTree*)inFile[1]->Get("vbf_m125_8TeV"); 
+    //     trees[2] = (TTree*)inFile[2]->Get("wzh_m125_8TeV"); 
+    //     trees[3] = (TTree*)inFile[3]->Get("tth_m125_8TeV"); 
   }
   if(HggCatType == "MVA_8TeV"){
     inFile[0] = new TFile("../data/Hgg_signalTrees/Hgg_Dump_MVA_8TeV.root", "read");
-//     inFile[1] = new TFile("../data/copiaHgg_MVA_125100.root", "read");
-//     inFile[2] = new TFile("../data/copiaHgg_MVA_125400.root", "read");
-//     inFile[3] = new TFile("../data/copiaHgg_MVA_125500.root", "read");
+    //     inFile[1] = new TFile("../data/copiaHgg_MVA_125100.root", "read");
+    //     inFile[2] = new TFile("../data/copiaHgg_MVA_125400.root", "read");
+    //     inFile[3] = new TFile("../data/copiaHgg_MVA_125500.root", "read");
     trees[0] = (TTree*)inFile[0]->Get("opttree");
-//     trees[1] = (TTree*)inFile[1]->Get("opttree");
-//     trees[2] = (TTree*)inFile[2]->Get("opttree");
-//     trees[3] = (TTree*)inFile[3]->Get("opttree");
+    //     trees[1] = (TTree*)inFile[1]->Get("opttree");
+    //     trees[2] = (TTree*)inFile[2]->Get("opttree");
+    //     trees[3] = (TTree*)inFile[3]->Get("opttree");
   }
 
   if(HggCatType == "CiC_7TeV"){
     inFile[0] = new TFile("../data/Hgg_signalTrees/Hgg_Dump_CiC_7TeV.root", "read");
-//     inFile[1] = new TFile("../data/histograms_CMS-HGG.root", "read");
-//     inFile[2] = new TFile("../data/histograms_CMS-HGG.root", "read");
-//     inFile[3] = new TFile("../data/histograms_CMS-HGG.root", "read");
+    //     inFile[1] = new TFile("../data/histograms_CMS-HGG.root", "read");
+    //     inFile[2] = new TFile("../data/histograms_CMS-HGG.root", "read");
+    //     inFile[3] = new TFile("../data/histograms_CMS-HGG.root", "read");
     trees[0] = (TTree*)inFile[0]->Get("opttree");
-//     trees[1] = (TTree*)inFile[1]->Get("vbf_m125_8TeV"); 
-//     trees[2] = (TTree*)inFile[2]->Get("wzh_m125_8TeV"); 
-//     trees[3] = (TTree*)inFile[3]->Get("tth_m125_8TeV"); 
+    //     trees[1] = (TTree*)inFile[1]->Get("vbf_m125_8TeV"); 
+    //     trees[2] = (TTree*)inFile[2]->Get("wzh_m125_8TeV"); 
+    //     trees[3] = (TTree*)inFile[3]->Get("tth_m125_8TeV"); 
   }
   if(HggCatType == "MVA_7TeV"){
     inFile[0] = new TFile("../data/Hgg_signalTrees/Hgg_Dump_MVA_7TeV.root", "read");
-//     inFile[1] = new TFile("../data/copiaHgg_MVA_125100.root", "read");
-//     inFile[2] = new TFile("../data/copiaHgg_MVA_125400.root", "read");
-//     inFile[3] = new TFile("../data/copiaHgg_MVA_125500.root", "read");
+    //     inFile[1] = new TFile("../data/copiaHgg_MVA_125100.root", "read");
+    //     inFile[2] = new TFile("../data/copiaHgg_MVA_125400.root", "read");
+    //     inFile[3] = new TFile("../data/copiaHgg_MVA_125500.root", "read");
     trees[0] = (TTree*)inFile[0]->Get("opttree");
-//     trees[1] = (TTree*)inFile[1]->Get("opttree");
-//     trees[2] = (TTree*)inFile[2]->Get("opttree");
-//     trees[3] = (TTree*)inFile[3]->Get("opttree");
+    //     trees[1] = (TTree*)inFile[1]->Get("opttree");
+    //     trees[2] = (TTree*)inFile[2]->Get("opttree");
+    //     trees[3] = (TTree*)inFile[3]->Get("opttree");
   }
 
   std::cout << " Input presi " << std::endl;
@@ -380,7 +380,7 @@ int main()
   
   if(HggCatType == "MVA_8TeV")   nCats = 5;
   
-  std::cout << " Branches letti now OUTPUT HISTOS" << std::endl;
+  std::cout << " >>> Branches letti now OUTPUT HISTOS " << std::endl;
 
   //-----------------------------
   //OutputHistogram - all samples

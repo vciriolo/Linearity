@@ -354,7 +354,7 @@ int main()
 
   nCats = 8;
   
-  std::cout << " Branches letti now OUTPUT HISTOS" << std::endl;
+  std::cout << " >>> Branches letti now OUTPUT HISTOS " << std::endl;
 
   //-----------------------------
   //OutputHistogram - all samples
