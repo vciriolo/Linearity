@@ -781,7 +781,7 @@ int main(int argc, char** argv)
   std::cout << " >>> Read data from MC sample" << std::endl;
   
   int nEntries_MC = ntu_MC -> GetEntriesFast();
-  //nEntries_MC = 10000;
+  nEntries_MC = 10000;
   for(int ientry = 0; ientry < nEntries_MC; ++ientry)
   {
     if( maxEntries != -1 && ientry == maxEntries ) break;
@@ -964,7 +964,7 @@ int main(int argc, char** argv)
   
   std::cout << ">>> Read data from DATA sample" << std::endl;
   int nEntries_DA = ntu_DA -> GetEntriesFast();
-  //nEntries_DA = 1000;
+  nEntries_DA = 1000;
   std::cout << ">>> DATA nEntries = " << nEntries_DA << std::endl;
   for(int ientry = 0; ientry < nEntries_DA; ientry++)
   {
@@ -1615,10 +1615,9 @@ int main(int argc, char** argv)
       double ex = h_Ht_HtBin_MC[HtBin]->GetMeanError();
       double exlow = ex;
       double exhig = ex;
-      
       h_Zpt_HtBin_MC[HtBin] -> Scale(1./h_Zpt_HtBin_MC[HtBin]->Integral());
       h_Zpt_HtBin_DA[HtBin] -> Scale(1./h_Zpt_HtBin_DA[HtBin]->Integral());
-      
+     
       h_mee_HtBin_MC[HtBin] -> Scale(1./h_mee_HtBin_MC[HtBin]->Integral());
       h_mee_HtBin_DA[HtBin] -> Scale(1./h_mee_HtBin_DA[HtBin]->Integral());
       h_mee_HtBin_fit_DA[HtBin] -> Scale(1./h_mee_HtBin_fit_DA[HtBin]->Integral());
@@ -1627,17 +1626,19 @@ int main(int argc, char** argv)
       h_mee_HtBin_recursiveMean_DA[HtBin] -> Scale(1./h_mee_HtBin_recursiveMean_DA[HtBin]->Integral());
       h_mee_HtBin_smallestInterval_DA[HtBin] -> Scale(1./h_mee_HtBin_smallestInterval_DA[HtBin]->Integral());
 
-      
+      std::cout<<"---> "<<HtBin<<std::endl;
       // fit
       if(debug)      std::cout << ">>>>>> nEvents_fit:              " << mee_HtBin_fit_DA[HtBin].size() << std::endl;
       if( mee_HtBin_fit_DA[HtBin].size() > 3 )
       {
+            std::cout<<"----> HtBin fit & size "<< HtBin <<"    "<< mee_HtBin_fit_DA[HtBin].size() <<std::endl;
         double scale_MC = 1.;
         double scale_DA = 0.;
         double scaleErr_MC = 0.;
         double scaleErr_DA = 0.;
 	//        FindTemplateFit(scale_DA,scaleErr_DA,h_mee_HtBin_MC[HtBin],h_mee_HtBin_fit_DA[HtBin]);
         FindTemplateFit(scale_DA,scaleErr_DA,h_mee_HtBin_MC[HtBin],h_mee_HtBin_fit_DA[HtBin], (*f_templateFit_HtBin).at(HtBin),0);
+                            std::cout<<"----> HtBin fit "<< HtBin <<std::endl;
         double y = scale_DA / scale_MC;
         double eylow = y * sqrt( pow(scaleErr_DA/scale_DA,2) + pow(scaleErr_MC/scale_MC,2) );
         double eyhig = y * sqrt( pow(scaleErr_DA/scale_DA,2) + pow(scaleErr_MC/scale_MC,2) );
@@ -1648,13 +1649,15 @@ int main(int argc, char** argv)
         scale_fit_DA -> SetPointError(HtBin,exlow,exhig,eylow,eyhig);
         scale_fit_DAOverMC -> SetPoint(HtBin,x,y);
         scale_fit_DAOverMC -> SetPointError(HtBin,exlow,exhig,eylow,eyhig);
+                    std::cout<<"----> HtBin fit "<< HtBin <<std::endl;
       }
       
-      
+		
       // gausFit
       std::cout << ">>>>>> nEvents_gausFit:          " << mee_HtBin_gausFit_DA[HtBin].size() << std::endl;
       if( mee_HtBin_gausFit_DA[HtBin].size() > 3 )
       {
+                  std::cout<<"----> HtBin gaus "<< HtBin <<std::endl;
         double scale_MC = 0.;
         double scale_DA = 0.;
         double scaleErr_MC = 0.;
@@ -1682,6 +1685,7 @@ int main(int argc, char** argv)
       std::cout << ">>>>>> nEvents_mean:             " << mee_HtBin_mean_DA[HtBin].size() << std::endl;
       if( mee_HtBin_mean_DA[HtBin].size() > 3 )
       {
+                  std::cout<<"----> HtBin mean "<< HtBin <<std::endl;
         double scale_MC = 0.;
         double scale_DA = 0.;
         double scaleErr_MC = 0.;
@@ -1705,6 +1709,7 @@ int main(int argc, char** argv)
       std::cout << ">>>>>> nEvents_recursiveMean:    " << mee_HtBin_recursiveMean_DA[HtBin].size() << std::endl;
       if( mee_HtBin_recursiveMean_DA[HtBin].size() > 3 )
       {
+      	            std::cout<<"----> HtBin recursive "<< HtBin <<std::endl;
         double scale_MC = 0.;
         double scale_DA = 0.;
         double scaleErr_MC = 0.;
@@ -1735,7 +1740,6 @@ int main(int argc, char** argv)
 	std::cout << " DA/MC scale = " << y << std::endl; 
 
 	}
-
         scale_recursiveMean_MC -> SetPoint(HtBin,x,scale_MC);
         scale_recursiveMean_MC -> SetPointError(HtBin,exlow,exhig,eylow,eyhig);
         scale_recursiveMean_DA -> SetPoint(HtBin,x,scale_DA);
