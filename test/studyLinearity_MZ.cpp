@@ -3,7 +3,7 @@
 #include "geometryUtils.h"
 #include "PUReweighting.h"
 #include "GetScaleCorrection.h"
-#include "EnergyScaleCorrections.h"
+//#include "EnergyScaleCorrections.h"
 #include "GetExtraSmearing.h"
 #include "GetCategories.h"
 #include "ScaleEstimators.h"
@@ -158,8 +158,6 @@ int main(int argc, char** argv)
   
   int nSteps = 1;
   float smearingSyst = 0.;
-  
-  
   
   
   //------------------
@@ -551,7 +549,7 @@ int main(int argc, char** argv)
   ScaleCorrector* myScaleCorrector = new ScaleCorrector(runRangeFile, "RunScale");
   ScaleCorrector* myEtScaleCorrector = new ScaleCorrector(ShervinEtScaleFile, "EtScale");
   ScaleCorrector* myEtResidualScaleCorrector = new ScaleCorrector(ShervinEtResidualScaleFile, "EtResidualScale");
-  EnergyScaleCorrection* myEtS0S5ScaleCorrector = new EnergyScaleCorrection(ShervinEtS0S5ScaleFile);
+  //EnergyScaleCorrection* myEtS0S5ScaleCorrector = new EnergyScaleCorrection(ShervinEtS0S5ScaleFile);
   
   if( energyScaleCorrType == "shervin" ) myScaleCorrector -> SetShervinRunDepScaleMap(ShervinScaleFile);
   if( energyScaleCorrType == "fabrice" ) myScaleCorrector -> SetIJazZGlobalScaleHisto(IJazZGlobalFolder);
@@ -606,7 +604,7 @@ int main(int argc, char** argv)
   std::string plotFolderName = outFilePath + "/" + year + "/";
   gSystem->mkdir(plotFolderName.c_str());
   plotFolderName += dataLabel;
-  gSystem->mkdir(plotFolderName.c_str());
+  gSystem->mkdir(plotFolderName.c_str());  
   
   plotFolderName += "/MZ_";
   plotFolderName += catType; 
@@ -619,10 +617,12 @@ int main(int argc, char** argv)
   if( applyEtaR9Reweighting == true ) plotFolderName += "_etaR9Reweighting";
   if( smearingSyst != 0 )             plotFolderName += Form("_smearingSyst%dp%02d",int(smearingSyst),int(smearingSyst*100)%100);
   plotFolderName += "/";
+
   gSystem->mkdir(plotFolderName.c_str());
   
   std::string label = "cat" + std::string(Form("%d",category)) + "_" + std::string(Form("%devtsPerPoint",evtsPerPoint));
-  outFile = TFile::Open((plotFolderName+"/studyLinearity_MZ_"+label+".root").c_str(),"RECREATE");
+
+  outFile = TFile::Open((plotFolderName+"studyLinearity_MZ_"+label+".root").c_str(),"RECREATE");
   
   for(unsigned int i = 0; i < nHtBins; ++i)
     std::cout << " >>> Ht bin " << i << ":   [" << HtBinEdges->at(i) << "," << HtBinEdges->at(i+1) << "]" << std::endl;
@@ -719,7 +719,9 @@ int main(int argc, char** argv)
   TH1F** h_mee_HtBin_recursiveMean_DA = new TH1F*[nHtBins];
   TH1F** h_mee_HtBin_smallestInterval_DA = new TH1F*[nHtBins];
   
-  TF1** f_templateFit_HtBin = new TF1*[nHtBins];
+  //TF1** f_templateFit_HtBin = new TF1*[nHtBins];
+  std::vector<TF1>* f_templateFit_HtBin = new std::vector<TF1>;
+  (*f_templateFit_HtBin).resize(nHtBins);
   TF1** f_gausFit_HtBin_MC = new TF1*[nHtBins];
   TF1** f_gausFit_HtBin_DA = new TF1*[nHtBins];
   
@@ -779,6 +781,7 @@ int main(int argc, char** argv)
   std::cout << " >>> Read data from MC sample" << std::endl;
   
   int nEntries_MC = ntu_MC -> GetEntriesFast();
+  //nEntries_MC = 10000;
   for(int ientry = 0; ientry < nEntries_MC; ++ientry)
   {
     if( maxEntries != -1 && ientry == maxEntries ) break;
@@ -842,7 +845,6 @@ int main(int argc, char** argv)
       if( applyPUWeight )
       {
         std::string periodLabel = getPeriodLabel(runId,runDepFlag,runMin,runMax);
-        
 	//	if(debug)	std::cout << " periodLabel = " << periodLabel << std::endl;
         int ibin = (*PUWeights)[periodLabel] -> FindBin( nPU );
         if( ibin <= 1 ) ibin = 1;
@@ -962,6 +964,7 @@ int main(int argc, char** argv)
   
   std::cout << ">>> Read data from DATA sample" << std::endl;
   int nEntries_DA = ntu_DA -> GetEntriesFast();
+  //nEntries_DA = 1000;
   std::cout << ">>> DATA nEntries = " << nEntries_DA << std::endl;
   for(int ientry = 0; ientry < nEntries_DA; ientry++)
   {
@@ -1083,7 +1086,7 @@ int main(int argc, char** argv)
     }
     if(debug)    std::cout << "3) DA scEReg1 = " << scEReg1 << std::endl; 
 
-    if( (applyEnergyEtS0S5ScaleCorr == true) && (MCClosure == false) && (applyEnergyEtResidualScaleCorr == false) &&
+    /*if( (applyEnergyEtS0S5ScaleCorr == true) && (MCClosure == false) && (applyEnergyEtResidualScaleCorr == false) &&
 	(applyEnergyEtScaleCorr == false)    && (applyEnergyScaleCorr == false))
     {
       scEReg1 *= myEtS0S5ScaleCorrector->getScaleOffset(runId, isEB1, R91, scEta1, scEReg1*Rt1);
@@ -1095,7 +1098,7 @@ int main(int argc, char** argv)
       int HtBin2 = MyFindBin(2.*(scEReg2*Rt2),HtBinEdges);
       if( HtBin2 == -1 ) continue;
       h_ScaleCorrections_HtBin[HtBin2]->Fill(myEtS0S5ScaleCorrector->getScaleOffset(runId, isEB2, R92, scEta2, scEReg2*Rt2));
-    }
+    }*/
     if(debug)    std::cout << "4) DA scEReg1 = " << scEReg1 << std::endl; 
 
     if( applyEtaR9Reweighting == true )
@@ -1232,6 +1235,7 @@ int main(int argc, char** argv)
   
   int MCEntries = mee_MC.size();
   std::cout << ">>> MCEntries = " << MCEntries << std::endl;
+  //kenzo
   for(int ientry = 0; ientry < MCEntries; ++ientry)
   {   
     if( (ientry%100000 == 0) ) std::cout << "reading   MC entry " << ientry << " / " << MCEntries << "\r" << std::flush;
@@ -1633,7 +1637,7 @@ int main(int argc, char** argv)
         double scaleErr_MC = 0.;
         double scaleErr_DA = 0.;
 	//        FindTemplateFit(scale_DA,scaleErr_DA,h_mee_HtBin_MC[HtBin],h_mee_HtBin_fit_DA[HtBin]);
-        FindTemplateFit(scale_DA,scaleErr_DA,h_mee_HtBin_MC[HtBin],h_mee_HtBin_fit_DA[HtBin], &(f_templateFit_HtBin[HtBin]));
+        FindTemplateFit(scale_DA,scaleErr_DA,h_mee_HtBin_MC[HtBin],h_mee_HtBin_fit_DA[HtBin], (*f_templateFit_HtBin).at(HtBin),0);
         double y = scale_DA / scale_MC;
         double eylow = y * sqrt( pow(scaleErr_DA/scale_DA,2) + pow(scaleErr_MC/scale_MC,2) );
         double eyhig = y * sqrt( pow(scaleErr_DA/scale_DA,2) + pow(scaleErr_MC/scale_MC,2) );
@@ -1750,6 +1754,7 @@ int main(int argc, char** argv)
       std::cout << ">>>>>> nEvents_smallestInterval: " << mee_HtBin_smallestInterval_DA[HtBin].size() << std::endl;
       if( mee_HtBin_smallestInterval_DA[HtBin].size() > 3 )
       {
+      	std::cout<<"!!!!!!!!!!!!!!!------->>>> HtBin ( > 3) =  "<<HtBin<<"/"<<nHtBins<<std::endl;
         double min_MC;
         double max_MC;
         double min_DA;
@@ -1777,13 +1782,19 @@ int main(int argc, char** argv)
 	float locErrorGraph = graphError_SmallestInterval->Eval(mee_HtBin_smallestInterval_DA[HtBin].size());
         scale_smallestInterval_DAOverMC -> SetPointError(HtBin,exlow,exhig,locErrorGraph,locErrorGraph);
       }
+      //fix k
+      
+      if(mee_HtBin_smallestInterval_DA[HtBin].size() < 3 || mee_HtBin_smallestInterval_DA[HtBin].size() == 3)
+      	{      	
+      	std::cout<<"!!!!!!!!!!!!!!!------->>>> HtBin ( < 3) =  "<<HtBin<<"/"<<nHtBins<<std::endl;
+      	smallestIntervalMins_MC.push_back(10000);
+        smallestIntervalMaxs_MC.push_back(10000);
+        smallestIntervalMins_DA.push_back(10000);
+        smallestIntervalMaxs_DA.push_back(10000);
+        }
     }
-    
-    
 
-    
     outFile -> cd();
-    
     char dirName[50];
     sprintf(dirName,"step%d",step);
     TDirectory* baseDir = outFile -> mkdir(dirName);
@@ -1821,8 +1832,7 @@ int main(int argc, char** argv)
     delete p_avgEtCorr_mean;
     delete p_avgEtCorr_recursiveMean;
     delete p_avgEtCorr_smallestInterval;
-    
-    
+
     baseDir -> cd();
     subDir = baseDir -> mkdir("mee_HtBin");
     subDir -> cd();
@@ -1843,22 +1853,24 @@ int main(int argc, char** argv)
       h_mee_HtBin_mean_DA[HtBin] -> Write();
       h_mee_HtBin_recursiveMean_DA[HtBin] -> Write();
       h_mee_HtBin_smallestInterval_DA[HtBin] -> Write();
+          	std::cout<<"templateFit "<<HtBin<<std::endl;
+      (*f_templateFit_HtBin).at(HtBin).Write();
+      //f_gausFit_HtBin_MC[HtBin] -> Write();
+      //f_gausFit_HtBin_DA[HtBin] -> Write();
       
-      f_templateFit_HtBin[HtBin] -> Write();
-      f_gausFit_HtBin_MC[HtBin] -> Write();
-      f_gausFit_HtBin_DA[HtBin] -> Write();
-      
-      h_ScaleCorrections_HtBin[HtBin]->Write();
+      //h_ScaleCorrections_HtBin[HtBin]->Write();
       
       if( step == 1 )
       {
+      	std::cout<<"step1  & HTBIN = "<<HtBin<<std::endl;
         TCanvas* c_DAOverMC = new TCanvas("c_Zpt");
         c_DAOverMC -> cd();
         c_DAOverMC -> SetGridx();
         c_DAOverMC -> SetGridy();
-        
+              	std::cout<<"step1"<<std::endl;
         char axisTitle[50];
         sprintf(axisTitle,"p_{T}(ee) [GeV]   -   H_{T} #in [%d,%d]",int(HtBinEdges->at(HtBin)),int(HtBinEdges->at(HtBin+1)));
+                      	std::cout<<"step1"<<std::endl;
         h_Zpt_HtBin_MC[HtBin] -> GetXaxis() -> SetTitle(axisTitle);
         sprintf(axisTitle,"event fraction");
         h_Zpt_HtBin_MC[HtBin] -> GetYaxis() -> SetTitle(axisTitle);
@@ -1874,12 +1886,11 @@ int main(int argc, char** argv)
         
         h_Zpt_HtBin_MC[HtBin] -> Draw("hist");
         h_Zpt_HtBin_DA[HtBin] -> Draw("P,same");
-        
-        if( HtBin == 0 )         c_DAOverMC -> Print((outputPdf2_DAMC+"[").c_str());
+        if( HtBin == 0 )         c_DAOverMC -> Print((outputPdf2_DAMC + "[").c_str(),"pdf");
         c_DAOverMC -> Print(outputPdf2_DAMC.c_str());
-        if( HtBin == nHtBins-1 ) c_DAOverMC -> Print((outputPdf2_DAMC+"]").c_str());
+        if( HtBin == nHtBins-1 ) c_DAOverMC -> Print((outputPdf2_DAMC+"]").c_str(),"pdf");
         delete c_DAOverMC;
-        
+              	std::cout<<"step1"<<std::endl;
 	/*
 	//////////////
 	c_DAOverMC = new TCanvas("c_Zpt");
@@ -1911,7 +1922,7 @@ int main(int argc, char** argv)
         c_DAOverMC -> cd();
         c_DAOverMC -> SetGridx();
         c_DAOverMC -> SetGridy();
-        
+              	std::cout<<"step1"<<std::endl;
         sprintf(axisTitle,"m_{ee}/m_{Z}^{PDG}   -   H_{T} #in [%d,%d]",int(HtBinEdges->at(HtBin)),int(HtBinEdges->at(HtBin+1)));
         h_mee_HtBin_MC[HtBin] -> GetXaxis() -> SetTitle(axisTitle);
         sprintf(axisTitle,"event fraction");
@@ -1928,14 +1939,15 @@ int main(int argc, char** argv)
         
         h_mee_HtBin_MC[HtBin] -> Draw("hist");
         h_mee_HtBin_DA[HtBin] -> Draw("P,same");
-        
-        if( HtBin == 0 )         c_DAOverMC -> Print((outputPdf_DAMC+"[").c_str());
-        c_DAOverMC -> Print(outputPdf_DAMC.c_str());
-        if( HtBin == nHtBins-1 ) c_DAOverMC -> Print((outputPdf_DAMC+"]").c_str());
+              	std::cout<<"step1   and histo size = "<<h_mee_HtBin_MC[HtBin] -> GetEntries()<<std::endl;
+        if( HtBin == 1 )         c_DAOverMC -> Print((outputPdf_DAMC+"[").c_str(),"pdf");
+        c_DAOverMC -> Print(outputPdf_DAMC.c_str(),"pdf");
+        c_DAOverMC -> Clear();
+        if( HtBin == nHtBins-1 ) c_DAOverMC -> Print((outputPdf_DAMC+"]").c_str(),"pdf");
         delete c_DAOverMC;
+              	std::cout<<"none no"<<std::endl;
         
-        
-        
+              	std::cout<<"step1"<<std::endl;
         TCanvas* c_MC = new TCanvas("c_MC");
         c_MC -> cd();
         c_MC -> SetGridx();
@@ -1963,16 +1975,18 @@ int main(int argc, char** argv)
         TArrow* line_smallestInterval_MC = new TArrow(y,0.,y,h_mee_HtBin_MC[HtBin]->GetBinContent(h_mee_HtBin_MC[HtBin]->FindBin(y)));
         line_smallestInterval_MC -> SetLineColor(kRed);
         line_smallestInterval_MC -> SetLineWidth(2);
-        
-	f_templateFit_HtBin[HtBin]->SetLineColor(kGreen);
-
+		(*f_templateFit_HtBin).at(HtBin).SetLineColor(kGreen);
         h_mee_HtBin_MC[HtBin] -> Draw("HIST");
-        
         TH1F* clone = (TH1F*)( h_mee_HtBin_MC[HtBin]->Clone() );
-        for(int bin = 1; bin < clone->GetNbinsX(); ++bin)
-          if( (clone->GetBinCenter(bin) < smallestIntervalMins_MC.at(HtBin)) ||
-              (clone->GetBinCenter(bin) > smallestIntervalMaxs_MC.at(HtBin)) )
-            clone -> SetBinContent(bin,0.);
+                                            std::cout<<"qua si    "<<nHtBins<<"   smallest size  "<<smallestIntervalMins_MC.size()<<std::endl;
+                                            if(HtBin > smallestIntervalMins_MC.size())	break;
+        for(int bin = 1; bin < clone->GetNbinsX(); ++bin){
+        //std::cout<<bin<<"   GetBincenter   "<<clone->GetBinCenter(bin)<<"   Smallest interval size  "<<smallestIntervalMins_MC.size()<<std::endl;
+        
+          if( (clone->GetBinCenter(4) < smallestIntervalMins_MC.at(HtBin)) ||
+             (clone->GetBinCenter(4) > smallestIntervalMaxs_MC.at(HtBin)) )
+            clone -> SetBinContent(4,0.);}
+                            std::cout<<"qua si"<<std::endl;
         clone -> SetFillColor(kYellow);
         clone -> SetLineWidth(0);
         clone -> Draw("HIST,same");
@@ -1982,9 +1996,8 @@ int main(int argc, char** argv)
         line_recursiveMean_min_MC -> Draw("same");
         line_recursiveMean_max_MC -> Draw("same");
         line_smallestInterval_MC  -> Draw("same");
-        f_gausFit_HtBin_MC[HtBin] -> Draw("same");
-        f_templateFit_HtBin[HtBin] -> Draw("same");
-        
+        //f_gausFit_HtBin_MC[HtBin] -> Draw("same");
+        (*f_templateFit_HtBin).at(HtBin).Draw("same");
         
         TCanvas* c_DA = new TCanvas("c_DA");
         c_DA -> cd();
@@ -2025,11 +2038,8 @@ int main(int argc, char** argv)
         TArrow* line_smallestInterval_DA = new TArrow(y,0.,y,h_mee_HtBin_DA[HtBin]->GetBinContent(h_mee_HtBin_DA[HtBin]->FindBin(y)));
         line_smallestInterval_DA -> SetLineColor(kRed);
         line_smallestInterval_DA -> SetLineWidth(2);
-        
-	f_templateFit_HtBin[HtBin]->SetLineColor(kGreen);
-
+		(*f_templateFit_HtBin).at(HtBin).SetLineColor(kGreen);
         h_mee_HtBin_DA[HtBin] -> Draw("HIST");
-        
         clone = (TH1F*)( h_mee_HtBin_DA[HtBin]->Clone() );
         for(int bin = 1; bin < clone->GetNbinsX(); ++bin)
           if( (clone->GetBinCenter(bin) < smallestIntervalMins_DA.at(HtBin)) ||
@@ -2044,9 +2054,8 @@ int main(int argc, char** argv)
         line_recursiveMean_min_DA -> Draw("same");
         line_recursiveMean_max_DA -> Draw("same");
         line_smallestInterval_DA  -> Draw("same");
-        f_gausFit_HtBin_DA[HtBin] -> Draw("same");
-        f_templateFit_HtBin[HtBin] -> Draw("same");
-        
+        //f_gausFit_HtBin_DA[HtBin] -> Draw("same");
+        //(*f_templateFit_HtBin).at(HtBin).Draw("same");
         
         if( HtBin == 0 )
         {
@@ -2072,12 +2081,10 @@ int main(int argc, char** argv)
       }
     }
     
-    
-    
     baseDir -> cd();
     subDir = baseDir -> mkdir("Et_EtBin");
     subDir -> cd();
-    
+        
     for(unsigned int EtBin = 0; EtBin < nEtBins; ++EtBin)
     {
       h_Et_EtBin_MC[EtBin] -> Scale(1./h_Et_EtBin_MC[EtBin]->Integral());
@@ -2096,14 +2103,13 @@ int main(int argc, char** argv)
       h_Et_EtBin_smallestInterval_DA[EtBin] -> Scale(1./h_Et_EtBin_smallestInterval_DA[EtBin]->Integral());
       h_Et_EtBin_smallestInterval_DA[EtBin] -> Write();
     }
-    
+
     outFile -> cd();
+
   }
   
-  
-  
-  outFile -> mkdir("Ht_HtBin");
-  outFile -> cd("Ht_HtBin");
+    outFile -> mkdir("Ht_HtBin");
+    outFile -> cd("Ht_HtBin");
   
   for(unsigned int HtBin = 0; HtBin < nHtBins; ++HtBin)
   {

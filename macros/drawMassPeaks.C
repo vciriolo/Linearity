@@ -1,7 +1,8 @@
 //g++ -Wall -o linearityPlots_MZ `root-config --cflags --glibs` linearityPlots_MZ.cpp
 
-#include "/Users/Arabella/Public/setTDRStyle.h"
+//#include "/Users/Arabella/Public/setTDRStyle.h"
 // #include "ntpleUtils.h"
+#include "../Linearity/interface/setTDRStyle.h"
 
 #include <iostream>
 #include <string>
@@ -34,9 +35,10 @@ int drawMassPeaks()
 
 
   std::vector<std::string> directories;
-  directories.push_back( "MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15_S0S5/");
+  directories.push_back("test_output/2012/Winter2013/MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15/");
+  //directories.push_back( "MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15_S0S5/");
   //  directories.push_back( "../5Dicembre/MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15_noEtResidual/");
-  directories.push_back( "../Ottobre_2013/Linearity_Uncertainty/MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15_noEtdep_17Nov/");
+  //directories.push_back( "../Ottobre_2013/Linearity_Uncertainty/MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15_noEtdep_17Nov/");
 //   directories.push_back( "MZ_stdCat_nonGlobe_powheg-runDependent_eleTunedRegV5_Dphi3p15_noEtdep/");
 //   directories.push_back( "MZ_stdCat_nonGlobe_powheg-runDependent_eleTunedRegV5_Dphi3p15_Etdep/");
 //   directories.push_back( "MZ_stdCat_nonGlobe_powheg-runDependent_phoTunedRegV5_Dphi3p15_AllMC_noEtdep/");
@@ -110,7 +112,7 @@ int drawMassPeaks()
   TLegend** legend = new TLegend*[nCat]; 
   //----------------------------
   // Define infiles and canvases
-  for(int iCat = 3; iCat >= 0; --iCat) {
+  for(int iCat = 0; iCat >= 0; --iCat) {
       std::cout << "\n***************** cat: " << iCat << " *****************" << std::endl;
       
       legend[iCat] = new TLegend(0.16, 0.75, 0.30, 1.);
@@ -143,7 +145,8 @@ int drawMassPeaks()
 	  char EvtString[50];
 	  sprintf(EvtString,"cat%d_%devtsPerPoint",iCat,evtsPerPoint[iCat]);
         
-	  inFileNames[iDir] = directory + "/" + baseFileName + std::string(EvtString) + ".root";
+	  //inFileNames[iDir] = directory + "/" + baseFileName + std::string(EvtString) + ".root";
+	  inFileNames[iDir] = directory + baseFileName + std::string(EvtString) + ".root";
 	  std::cout << ">>> inFileName: " << inFileNames[iDir] << std::endl;
 	  TFile* f = TFile::Open((inFileNames[iDir]).c_str(),"READ");
 

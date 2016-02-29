@@ -29,18 +29,4 @@ extern void G__set_cpp_environmentmydict();
 }
 
 
-#include "TObject.h"
-#include "TMemberInspector.h"
-#include <algorithm>
-namespace std { }
-using namespace std;
-
-#ifndef G__MEMFUNCBODY
-#endif
-
-extern G__linked_taginfo G__mydictLN_vectorlEROOTcLcLTSchemaHelpercOallocatorlEROOTcLcLTSchemaHelpergRsPgR;
-extern G__linked_taginfo G__mydictLN_reverse_iteratorlEvectorlEROOTcLcLTSchemaHelpercOallocatorlEROOTcLcLTSchemaHelpergRsPgRcLcLiteratorgR;
-extern G__linked_taginfo G__mydictLN_vectorlETVirtualArraymUcOallocatorlETVirtualArraymUgRsPgR;
-extern G__linked_taginfo G__mydictLN_reverse_iteratorlEvectorlETVirtualArraymUcOallocatorlETVirtualArraymUgRsPgRcLcLiteratorgR;
-
-/* STUB derived class for protected member access */
+#include "/tmp/rootcint_itc6uI.h"

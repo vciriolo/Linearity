@@ -3,7 +3,7 @@
 #include "geometryUtils.h"
 #include "PUReweighting.h"
 #include "GetScaleCorrection.h"
-#include "EnergyScaleCorrections.h"
+//#include "EnergyScaleCorrections.h"
 #include "GetExtraSmearing.h"
 #include "GetCategories.h"
 #include "ScaleEstimators.h"
@@ -24,7 +24,7 @@
 #include "TArrow.h"
 #include "TRandom3.h"
 
-
+using namespace std;
 
 //-----------------
 // global variables
@@ -515,7 +515,7 @@ int main(int argc, char** argv)
   
   ScaleCorrector* myScaleCorrector = new ScaleCorrector(runRangeFile, "RunScale");
   ScaleCorrector* myEtScaleCorrector = new ScaleCorrector(ShervinEtScaleFile, "EtScale");
-  EnergyScaleCorrection* myEtS0S5ScaleCorrector = new EnergyScaleCorrection(ShervinEtS0S5ScaleFile);
+  //EnergyScaleCorrection* myEtS0S5ScaleCorrector = new EnergyScaleCorrection(ShervinEtS0S5ScaleFile);
 
   if( energyScaleCorrType == "shervin" ) myScaleCorrector -> SetShervinRunDepScaleMap(ShervinScaleFile);
   if( energyScaleCorrType == "fabrice" ) myScaleCorrector -> SetIJazZGlobalScaleHisto(IJazZGlobalFolder);
@@ -664,7 +664,6 @@ int main(int argc, char** argv)
     if( ientry%100000 == 0 ) std::cout << ">>>>>> reading   MC entry " << ientry << " / " << nEntries_MC << "\r" << std::flush;
     ntu_MC->GetEntry(ientry);
     
-    
     // define variables
     if( !useShervinNtuple )
     {
@@ -724,12 +723,14 @@ int main(int argc, char** argv)
       }
       if( applyPUWeight )
       {
+            cout<<"check4"<<endl;
         std::string periodLabel = getPeriodLabel(runId,runDepFlag,runMin,runMax);
-        
         int ibin = (*PUWeights)[periodLabel] -> FindBin( nPU );
+              cout<<"check1"<<endl;
         if( ibin <= 1 ) ibin = 1;
         if( ibin >= (*PUWeights)[periodLabel]->GetNbinsX() ) ibin = (*PUWeights)[periodLabel]->GetNbinsX();
         weight = 1. * (*PUWeights)[periodLabel]->GetBinContent(ibin);
+              cout<<"check2"<<endl;
       }
     }
     
@@ -739,7 +740,7 @@ int main(int argc, char** argv)
     float Rt2 = sin(theta2);
     bool isEB1 = false;
     bool isEB2 = false;
-    
+          cout<<"check3"<<endl;
     {
       scEta1_mc = -100.;
       scEta2_mc = -100.;
@@ -764,7 +765,7 @@ int main(int argc, char** argv)
       gs2_mc = 0;
     }
 
-
+      cout<<"check6"<<endl;
     // selections
     if( !HLTfire ) continue;
     if( fabs(scEta1) >= 2.5000 || fabs(scEta2) >= 2.5000  ) continue;
@@ -1030,13 +1031,13 @@ int main(int argc, char** argv)
       scEReg2 *= myEtScaleCorrector->GetEtScaleCorrection(scEta2,R92,scEReg2*Rt2,dataLabel,energyEtScaleCorrType, 0.);
     }    
     
-    if( (applyEnergyEtS0S5ScaleCorr == true) && (MCClosure == false) && 
+    /*if( (applyEnergyEtS0S5ScaleCorr == true) && (MCClosure == false) && 
         (applyEnergyEtScaleCorr == false)    && (applyEnergyScaleCorr == false))
       {
 	scEReg1 *= myEtS0S5ScaleCorrector->getScaleOffset(runId, isEB1, R91, scEta1, scEReg1*Rt1);
 	scEReg2 *= myEtS0S5ScaleCorrector->getScaleOffset(runId, isEB2, R92, scEta2, scEReg2*Rt2);
       }
-
+*/
     if( applyEtaR9Reweighting == true )
     {
       float leadEta = scEta1;

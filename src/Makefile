@@ -27,9 +27,14 @@ BINS	 =  $(addprefix $(BIN),${___BINS})
 LINKDEF   =  $(wildcard ${HDR}*LinkDef.h)
 DICTHDRS  =  $(patsubst $(LINKDEF),,$(HDRS)) $(LINKDEF)
 
+ROOT_LIB := `root-config --libs --glibs`
+ROOT_FLAGS := `root-config --cflags --ldflags`
+
 
 ROOTCFLAGS    = $(shell root-config --cflags)
 ROOTGLIBS     = $(shell root-config --glibs)
+#ROOT_LIB := `root-config --libs --glibs`
+#ROOT_FLAGS := `root-config --cflags --ldflags` -lMathCore -lMathMore
 
 COMMONUTILSFLAGS = $(shell commonutils-config --include)
 COMMONUTILSLIBS = $(shell commonutils-config --libs)
@@ -38,19 +43,20 @@ CLHEPCFLAGS   =  $(shell clhep-config --include)
 CLHEPLIBS     =  $(shell clhep-config --libs)
 
 ARCHL = -m64
-
-CXX  =  c++
-CXXFLAGS  =  -Wall -O -fPIC -I$(HDR) $(COMMONUTILSFLAGS) $(ROOTCFLAGS) -I$(ROOFITSYS)/include
-CPP  =  c++
-CPPFLAGS  = -Wall $(ARCHL) -I$(HDR) $(COMMONUTILSFLAGS) $(ROOTCFLAGS) -I$(ROOFITSYS)/include
+CXX  =  g++
+#CXXFLAGS  = -Wall -O -fPIC -I$(HDR) $(ROOTCFLAGS) $(ROOTGLIBS) -I$(ROOFITSYS)/include $(ROOT_LIB) $(COMMONUTILSFLAGS)
+CXXFLAGS  =  -Wall -O -fPIC -I$(HDR) $(COMMONUTILSFLAGS) $(ROOTCFLAGS)
+#CXXFLAGS =  -fPIC
+CPP  =  g++
+CPPFLAGS  = -Wall $(ARCHL) -I$(HDR) $(COMMONUTILSFLAGS) $(ROOTCFLAGS)
 
 LD       =  c++
 LDFLAGS  =  -rdynamic -shared $(ARCHL)
 SONAME	 =  libLinearity.so
 SOFLAGS  =  -Wl,-soname,$(SONAME)
-
-GLIBS   =  -lm -ldl -rdynamic $(ROOTGLIBS) $(COMMONUTILSLIBS) -L$(ROOFITSYS)/lib -lGenVector -lFoam -lMinuit -lRooFitCore -lRooFit -lMLP -lXMLIO -lTMVA -lTreePlayer
-
+#SOFLAGS = -shared -O3
+GLIBS = -lm -ldl -rdynamic $(ROOTGLIBS) $(COMMONUTILSLIBS) -L$(ROOFITSYS)/lib -lFoam -lMinuit -lRooFitCore -lRooFit -lMLP -lXMLIO -lTMVA -lTreePlayer
+#GLIBS	=	$(CXX) -L$(ROOFITSYS)/lib -c -o $@ $< $(INCLUDE) $(ROOT_LIB) $(ROOT_FLAGS) -lGenVector -lFoam -lMinuit -lRooFitCore -lRooFit -lMLP -lXMLIO -lTMVA -lTreePlayer
 
 #################################################
 #if mac
@@ -107,7 +113,7 @@ test:
 	@echo "OBJS = $(OBJS)"
 	@echo "PRGS = $(PRGS)"
 	@echo "BINS = $(BINS)"
-
+	@echo "KENZOTEST$(ROOFITSYS)"
 
 $(OBJ)%$(ObjSuf): %$(SrcSuf) $(HDRS)
 	$(CXX) -c $(CXXFLAGS) -o $@ $< 
@@ -126,7 +132,7 @@ $(LIB)$(SONAME): $(OBJS) $(OBJ)mydict.o
 	$(LD) $(LDFLAGS) $(OBJS) $(OBJ)mydict.o $(SOFLAGS) -o $(LIB)$(SONAME) 
 
 $(BIN)%$(BinSuf): $(PRG)%$(PrgSuf) $(HDRS) $(LIB)$(SONAME)
-	$(CPP) $(CPPFLAGS) -L$(LIB) $(GLIBS) -lLinearity  -o $@ $<
+	$(CPP) $(CPPFLAGS) $(ROOT_LIB) $(ROOT_FLAGS) -L$(LIB) $(GLIBS) -lLinearity  -o $@ $<
 
 
 clean:
